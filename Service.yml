@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gamutkart-service
+  labels:
+    env: prod
+    branch: main
+spec:
+  type: NodePort
+  selector:
+    name: gamutkart-p
+  ports:
+  - nodePort: 31000
+    port: 8080
+    targetPort: 8080
